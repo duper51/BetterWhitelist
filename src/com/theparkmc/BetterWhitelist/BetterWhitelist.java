@@ -8,6 +8,7 @@ public class BetterWhitelist extends JavaPlugin {
 	public static boolean lockdown = true;
 	public void onEnable() {
 		Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
+		getCommand("wl").setExecutor(new WLCommandExecutor());
 	}
 	public void onDisable() {
 		

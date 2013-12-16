@@ -24,11 +24,19 @@ public class WLCommandExecutor implements CommandExecutor {
 				if(args[0].equals("on")) {
 					if(snd.hasPermission("bw.whitelist")) {
 						BetterWhitelist.setLockdown(true);
+						snd.sendMessage(ChatColor.BOLD + "" + ChatColor.RED + "Whitelist enabled!");
+						return true;
+					} else {
+						snd.sendMessage(ChatColor.DARK_RED + "You do not have the permission to do that!");
 					}
 				}
 				if(args[0].equals("off")) {
 					if(snd.hasPermission("bw.whitelist")) {
 						BetterWhitelist.setLockdown(false);
+						snd.sendMessage(ChatColor.BOLD + "" + ChatColor.GREEN + "Whitelist disabled!");
+						return true;
+					} else {
+						snd.sendMessage(ChatColor.DARK_RED + "You do not have the permission to do that!");
 					}
 				}
 			}
