@@ -1,0 +1,13 @@
+name: Battledome
+author: duper51
+main: com.theparkmc.BetterWhitelist.BetterWhitelist
+softdepend: [Multiverse-Core, Multiworld, DimensionDoor]
+version: 0.2
+load: POSTWORLD
+commands:
+  bunkerbuster:
+    usage: /<command>
+    description: Shows battledome help
+permissions:
+  battledome.create:
+    description: Allows you to create and edit arenas
