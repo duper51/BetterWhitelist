@@ -5,7 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BetterWhitelist extends JavaPlugin {
-	public static boolean lockdown = true;
+	public static boolean lockdown = false;
+	public static boolean opsonly = false;
 	public void onEnable() {
 		Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
 		getCommand("wl").setExecutor(new WLCommandExecutor());
@@ -16,6 +17,12 @@ public class BetterWhitelist extends JavaPlugin {
 	public static boolean isLockdown() {
 		return lockdown;
 	}
+	public static boolean isOpOnly() {
+		return opsonly;
+	}
+	public static void setOpOnly(boolean b) {
+		opsonly=b;
+	}
 	public static void setLockdown(boolean b) {
 		lockdown=b;
 	}
@@ -25,7 +32,7 @@ public class BetterWhitelist extends JavaPlugin {
 			kickMessage = kickMessage.replaceAll("&", "§");
 			return kickMessage;
 		} else {
-			return ChatColor.RED + "Server is in lockdown";
+			return ChatColor.RED + "Server is in lockdown.";
 		}
 	}
 }
