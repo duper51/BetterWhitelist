@@ -7,8 +7,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BetterWhitelist extends JavaPlugin {
 	public BetterWhitelist plugin = this;
 	public static boolean isLockdown = false;
+	public static boolean isWhitelist = false;
 	public void onEnable() {
 		sendConsole("Starting up the system");
+		Bukkit.getPluginManager().registerEvents(new PlayerListener(this), this);
+		Bukkit.getServer().getPluginCommand("lockdown").setExecutor(new CommandListener());
+		Bukkit.getServer().getPluginCommand("wl").setExecutor(new CommandListener());
 	}
 	public void onDisable() {
 		

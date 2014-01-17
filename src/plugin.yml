@@ -1,13 +1,16 @@
-name: Battledome
+name: BetterWhitelist
 author: duper51
 main: com.theparkmc.BetterWhitelist.BetterWhitelist
-softdepend: [Multiverse-Core, Multiworld, DimensionDoor]
 version: 0.2
-load: POSTWORLD
 commands:
-  bunkerbuster:
+  lockdown:
     usage: /<command>
-    description: Shows battledome help
+    description: Enables lockdown. Kicks all players off the game except for OPs.
+  wl:
+    usage: /<command>
+    description: Enables whitelist. Leaves players on, but disallows players to rejoin without permissions.
 permissions:
-  battledome.create:
-    description: Allows you to create and edit arenas
+  bw.enablewhitelist:
+    description: Allows the use of /wl
+  bw.allowentry:
+    description: Allows players to bypass whitelist
