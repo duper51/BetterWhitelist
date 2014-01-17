@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class CommandListener implements CommandExecutor{
 	public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("lockdown")) {
+		if(label.equalsIgnoreCase("lockdown")) {
 			if(p.isOp()) {
 				if(BetterWhitelist.isLockdown==false) {
 					BetterWhitelist.isLockdown=true;
@@ -25,7 +25,7 @@ public class CommandListener implements CommandExecutor{
 				}
 			}
 		}
-		if(cmd.getName().equalsIgnoreCase("wl")) {
+		if(label.equalsIgnoreCase("wl")) {
 			if(p.hasPermission("bw.enablewhitelist")) {
 				if(BetterWhitelist.isWhitelist==false) {
 					BetterWhitelist.isWhitelist=true;

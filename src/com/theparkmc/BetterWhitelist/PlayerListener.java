@@ -16,12 +16,14 @@ public class PlayerListener implements Listener {
 		if(BetterWhitelist.isLockdown) {
 			if(e.getPlayer().isOp()) {
 				e.allow();
+			} else {
+				e.disallow(Result.KICK_OTHER, plugin.getKickMessage());
 			}
 		} else if(BetterWhitelist.isWhitelist) {
-			if(e.getPlayer().hasPermission("bw.allowEntry")) {
+			if(e.getPlayer().hasPermission("bw.allowentry")) {
 				e.allow();
 			} else {
-				e.disallow(Result.KICK_WHITELIST, plugin.getKickMessage());
+				e.disallow(Result.KICK_OTHER, plugin.getKickMessage());
 			}
 		} else {
 			e.allow();
